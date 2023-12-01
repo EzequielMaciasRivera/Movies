@@ -21,9 +21,23 @@
         <div style="background-image: url({{movie.poster}});" class="card__img--hover"></div>
       </a>
       <div class="card__info">
-        <span class="card__category">{{movie.genre}}</span>
-        <h3 class="card__title">{{movie.title}}</h3>
-        <span class="card__by">by <a href="#" class="card__author" title="author">{{movie.author}}</a></span>
+        <div class="items">
+          <mat-icon>playlist_add_check</mat-icon>
+          <h5 class="OnMyWatchlist">On my watchlist</h5>
+        </div>
+
+        <div class="titleBox">
+          <h3 class="card__title">{{movie.title}}</h3>
+        </div>
+        <div class="authorBox">
+          <span class="card__by">by <a href="#" class="card__author" title="author">{{movie.author}}</a></span>
+        </div>
+        <p class="card__category">Genere: {{movie.genre}}</p>
+        <div class="playCenter">
+          <button type="button"
+            class="customeBottom btn btn-sm btn btn-outline-success"><mat-icon>play_circle_outline</mat-icon>
+            <mat-icon>weekend</mat-icon></button>
+        </div>
       </div>
     </div>
   </div>
@@ -46,8 +60,7 @@
           <mat-icon>playlist_add_check</mat-icon>
           <h5>On my watchlist</h5>
         </div>
-        <button type="button" class="btn btn-sm btn btn-outline-success"><mat-icon>play_circle_outline</mat-icon>
-          <mat-icon>weekend</mat-icon></button>
+        
       </div>
     </div>
   </div>

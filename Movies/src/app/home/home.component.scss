@@ -14,40 +14,9 @@ html {
     padding: 0;
 }
 
-/* body {
-    background-color: #D2DBDD;
-    display: flex;
-    display: -webkit-flex;
-    -webkit-justify-content: center;
-    -webkit-align-items: center;
-    justify-content: center;
-    align-items: center;
-} */
-
-.cards {
-    width: 100%;
-    display: flex;
-    display: -webkit-flex;
-    justify-content: center;
-    -webkit-justify-content: center;
-    max-width: 620px;
-}
-
-.card--1 .card__img,
-.card--1 .card__img--hover {
-    //background-image: url('https://images.pexels.com/photos/45202/brownie-dessert-cake-sweet-45202.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
-}
-
-.card--2 .card__img,
-.card--2 .card__img--hover {
-    background-image: url('https://images.pexels.com/photos/307008/pexels-photo-307008.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
-}
-
 .justifyClass {
     justify-content: space-between;
 }
-
-
 
 .card__like {
     width: 18px;
@@ -110,6 +79,9 @@ html {
 }
 
 .card {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     max-height: 300px;
     transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
     background-color: #fff;
@@ -132,24 +104,32 @@ html {
     background-color: #fff;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
-    padding: 16px 24px 24px 24px;
+    padding: 2px 12px 24px 12px;
     -webkit-transition: 1s linear;
     transition: 1s linear;
+    height: 10.4rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .card__category {
     font-family: 'Raleway', sans-serif;
     text-transform: uppercase;
-    font-size: 13px;
+    font-size: 0.55rem;
     letter-spacing: 2px;
     font-weight: 500;
-    color: #868686;
+    color: #695c5c;
+    height: 1rem;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    margin-bottom: 4px;
 }
 
 .card__title {
-    margin-top: 5px;
-    margin-bottom: 10px;
-    font-family: 'Roboto Slab', serif;
+    margin: 10px 0px 5px 0px;
+    font-family: cursive;
+    line-height: 16px;
 }
 
 .card__by {
@@ -172,7 +152,6 @@ html {
     background: rgba(255, 255, 255, 0.664);
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
-    border: 1.5px solid rgba(209, 213, 219, 0.3);
     transition: 0.4s all ease-out;
     position: relative;
     transform: translateY(-100px);
@@ -184,6 +163,51 @@ html {
     opacity: 1;
     transition: 0.4s all ease-out;
 }
+
+.items {
+    display: flex;
+}
+
+.OnMyWatchlist {
+    margin: 2px 0px 0px 1px;
+}
+
+.titleBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: -9px 0px 0px 0px;
+}
+
+.playCenter {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.authorBox {
+    height: 1.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 0px;
+}
+
+.customeBottom {
+    padding-top: 4px !important;
+    padding-bottom: 0px !important;
+}
+
+.card:hover .playCenter {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 8px;
+}
+
+
 
 .cards-groupe {
     width: 3rem;
