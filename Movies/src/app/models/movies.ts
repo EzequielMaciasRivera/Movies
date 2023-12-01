@@ -8,4 +8,5 @@ export class Movie {
     releasedDate: string = '';
     poster: string = '';
     trailerLink: string = '';
+    author: string = '';
 }

@@ -9,8 +9,8 @@ export const moviesData: Movie[] = [
         genre: 'Action, Sci-Fi',
         releasedDate: '3 September 2020',
         poster: '../../assets/posters/Tenet.png',
-        trailerLink: 'https://www.youtube.com/watch?v=LdOM0x0XDMo'
-
+        trailerLink: 'https://www.youtube.com/watch?v=LdOM0x0XDMo',
+        author: 'Ezequiel Rivera'
     },
     {
         id: 2,
@@ -20,9 +20,9 @@ export const moviesData: Movie[] = [
         duration: '1h 57min',
         genre: ' Action, Animation, Adventure',
         releasedDate: '14 December 2018',
-        poster: '../../assets/posters/Spider Man.png',
-        trailerLink: 'https://www.youtube.com/watch?v=tg52up16eq0'
-
+        poster: '../../assets/posters/SpiderMan.png',
+        trailerLink: 'https://www.youtube.com/watch?v=tg52up16eq0',
+        author: 'Mariana Macías'
     },
     {
         id: 3,
@@ -32,8 +32,9 @@ export const moviesData: Movie[] = [
         duration: '2h 10min',
         genre: 'Comedy, Crime, Drama',
         releasedDate: '27 November 2019',
-        poster: '../../assets/posters/Knives Out.png',
-        trailerLink: 'https://www.youtube.com/watch?v=qGqiHJTsRkQ'
+        poster: '../../assets/posters/KnivesOut.png',
+        trailerLink: 'https://www.youtube.com/watch?v=qGqiHJTsRkQ',
+        author: 'Sergio Martinez'
     },
     {
         id: 4,
@@ -43,8 +44,9 @@ export const moviesData: Movie[] = [
         duration: '2h 1min',
         genre: 'Action, Adventure, Comedy',
         releasedDate: '1 August 2014',
-        poster: '../../assets/posters/Guardians of The Galaxy.png',
-        trailerLink: 'https://www.youtube.com/watch?v=d96cjJhvlMA'
+        poster: '../../assets/posters/GuardiansofTheGalaxy.png',
+        trailerLink: 'https://www.youtube.com/watch?v=d96cjJhvlMA',
+        author: 'Álex Moon'
     },
     {
         id: 5,
@@ -55,6 +57,7 @@ export const moviesData: Movie[] = [
         genre: 'Action, Adventure, Sci-Fi',
         releasedDate: '1 May 2015',
         poster: '../../assets/posters/Avengers.png',
-        trailerLink: 'https://www.youtube.com/watch?v=tmeOjFno6Do'
+        trailerLink: 'https://www.youtube.com/watch?v=tmeOjFno6Do',
+        author: 'Rosario Polanco'
     }
 ];
