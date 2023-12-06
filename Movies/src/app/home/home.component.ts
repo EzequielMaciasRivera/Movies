@@ -10,11 +10,37 @@ import { Movie } from '../models/movies';
 export class HomeComponent implements OnInit {
   moviesToShow: Movie[] = [];
   choosedMovie: any;
+  sortedByAlphabetic = false;
+  sortedByRealisedDate = false;
   constructor() { }
 
   ngOnInit(): void {
     this.moviesToShow = moviesData;
   }
+
+  sortByAlphabetic(movies: Movie[]): Movie[] {
+    this.moviesToShow = movies.sort((a, b) =>
+      this.sortedByAlphabetic ? b.title.localeCompare(a.title) : a.title.localeCompare(b.title));
+    this.sortedByAlphabetic = !this.sortedByAlphabetic;
+    return this.moviesToShow;
+  }
+  sortConvertStringDateToString(movies: Movie[]): Movie[] {
+    const sortOrder = this.sortedByRealisedDate ? -1 : 1;
+    const sortedArray = movies.sort((a, b) => sortOrder * (new Date(a.releasedDate).getTime() - new Date(b.releasedDate).getTime()));
+    this.moviesToShow = sortedArray.map((obj) => ({
+      ...obj,
+      releasedDate: new Date(obj.releasedDate).toISOString(),
+    }));
+    this.sortedByRealisedDate = !this.sortedByRealisedDate;
+    return this.moviesToShow;
+  }
+
+
+
+
+
+
+
   whatchMovie(heroe: any): void {
     this.choosedMovie = heroe;
     console.log(this.choosedMovie);

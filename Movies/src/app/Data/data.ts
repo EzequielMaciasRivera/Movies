@@ -7,7 +7,7 @@ export const moviesData: Movie[] = [
         rating: 7.8,
         duration: '2h 30 min',
         genre: 'Action, Sci-Fi',
-        releasedDate: '3 September 2020',
+        releasedDate: '2020-09-03T00:00:00Z',
         poster: '../../assets/posters/Tenet.png',
         trailerLink: 'https://www.youtube.com/watch?v=LdOM0x0XDMo',
         author: 'Ezequiel Rivera'
@@ -19,7 +19,7 @@ export const moviesData: Movie[] = [
         rating: 8.4,
         duration: '1h 57min',
         genre: ' Action, Animation, Adventure',
-        releasedDate: '14 December 2018',
+        releasedDate: '2018-12-14T00:00:00Z',
         poster: '../../assets/posters/SpiderMan.png',
         trailerLink: 'https://www.youtube.com/watch?v=tg52up16eq0',
         author: 'Mariana Macías'
@@ -31,7 +31,7 @@ export const moviesData: Movie[] = [
         rating: 7.9,
         duration: '2h 10min',
         genre: 'Comedy, Crime, Drama',
-        releasedDate: '27 November 2019',
+        releasedDate: '2019-11-27T00:00:00Z',
         poster: '../../assets/posters/KnivesOut.png',
         trailerLink: 'https://www.youtube.com/watch?v=qGqiHJTsRkQ',
         author: 'Sergio Martinez'
@@ -43,7 +43,7 @@ export const moviesData: Movie[] = [
         rating: 8.0,
         duration: '2h 1min',
         genre: 'Action, Adventure, Comedy',
-        releasedDate: '1 August 2014',
+        releasedDate: '2014-08-01T00:00:00Z',
         poster: '../../assets/posters/GuardiansofTheGalaxy.png',
         trailerLink: 'https://www.youtube.com/watch?v=d96cjJhvlMA',
         author: 'Álex Moon'
@@ -55,7 +55,7 @@ export const moviesData: Movie[] = [
         rating: 7.3,
         duration: '2h 21min',
         genre: 'Action, Adventure, Sci-Fi',
-        releasedDate: '1 May 2015',
+        releasedDate: '2015-05-01T00:00:00Z',
         poster: '../../assets/posters/Avengers.png',
         trailerLink: 'https://www.youtube.com/watch?v=tmeOjFno6Do',
         author: 'Rosario Polanco'
