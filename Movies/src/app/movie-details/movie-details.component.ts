@@ -2,6 +2,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ServiceMovieService } from '../services/service-movie.service';
 import { Movie } from '../models/movies';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-movie-details',
@@ -10,11 +12,11 @@ import { Movie } from '../models/movies';
 })
 export class MovieDetailsComponent implements OnInit {
   moviesToShow: Movie[] = [];
-  movie: string = '';
   constructor(
     private readonly activeRoute: ActivatedRoute,
     private readonly router: Router,
-    private serviceMovie: ServiceMovieService
+    private serviceMovie: ServiceMovieService,
+    private _sanitizer: DomSanitizer
   ) { }
 
   ngOnInit(): void {
@@ -35,46 +37,23 @@ export class MovieDetailsComponent implements OnInit {
       if (movie) {
         // Si la película fue encontrada, ahora puedes usarla
         console.log('Película encontrada:', movie);
-        this.moviesToShow = [movie]; // Colocar el objeto Movie en un array
-        // ... hacer algo más con movie ...
+        this.moviesToShow = [movie];
       } else {
         console.log('Película no encontrada');
-        this.moviesToShow = []; // Asignar un array vacío o manejar de acuerdo a tu lógica
+        this.moviesToShow = [];
       }
     });
   }
+  getVideoIframe(url: string) {
+    var video, results;
 
-  getMoviesByIdSelected(movieById: number): void {
-    /*  this.moviesToShow = this.moviesToShow.find((item: Movie) => item.id === movieById);
-     console.log(foundItem ? `Objeto encontrado: ${foundItem}` : "Objeto no encontrado");
-     console.log(foundItem); */
+    if (url === null) {
+      return '';
+    }
+    results = url.match('[\\?&]v=([^&#]*)');
+    video = (results === null) ? url : results[1];
 
-    /* 
-        var movieFounded = this.moviesToShow.filter(function (movie) {
-          return movie.id === movieById;
-        }, null);
-     */
-    /* const resultado = this.moviesToShow.find((movie) => movie.id === 1); */
-    /* const movieFounded: Movie | null = this.moviesToShow.reduce((value: Movie | null, movie: Movie) => {
-      return movie.id === movieById ? movie : value;
-    }, null); */
-
-    /*  console.log(foundItem); */
-    /*  this.moviesToShow = resultado; */
-
-
-
-
-
-    /*  this.serviceMovie.getMovies().subscribe(movieById => {
-       this.moviesToShow = movieById;
-       console.log('entró:', this.moviesToShow);
- 
-       const itemIdToFind: number = 2;
-       const foundItem: Movie | undefined = movieById.find((item: Movie) => item.id === movieById);
-       console.log(foundItem ? `Objeto encontrado: ${foundItem}` : "Objeto no encontrado");
- 
-     }); */
+    return this._sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + video);
   }
 
   goBack() {

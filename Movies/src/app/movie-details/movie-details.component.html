@@ -1,21 +1,40 @@
-<div *ngFor="let movie of moviesToShow" class="row container-movie">
+<div *ngFor="let movie of moviesToShow" class="d-flex justifyClass flex-wrap">
     <div class="col-12 col-md-6 tex-center p-0">
-        <div pButton type="button" label="Regresar" (click)="goBack()">Atras</div>
+        <div pButton type="button" label="Regresar" (click)="goBack()"><mat-icon class="icon">undo</mat-icon></div>
         <div style="background-image: url({{movie.poster}});" class="card"></div>
     </div>
     <div class="col-12 col-md-6 mt-4">
-        <strong>Género:</strong>
-        <div class="d-inline">
-            <!-- <p-tag [value]="genre.name" severity="success"></p-tag> -->
+
+        <div class="mt-2">
+            <strong>Título: </strong><label>{{movie.title}}</label>
+        </div>
+
+        <div class="mt-2">
+            <strong>Autor: </strong><label>{{movie.author}}</label>
         </div>
         <div class="mt-2">
-            <strong>Título:</strong><label>algo</label>
+            <strong>Género: </strong><label>{{movie.genre}}</label>
         </div>
         <div class="mt-2">
-            <strong>Eslogan:</strong><label>algo</label>
+            <strong>Duración: </strong><label>{{movie.duration}}</label>
         </div>
         <div class="mt-2">
-            <strong>Votos:</strong><label>algo</label>
+            <strong>Puntaje: </strong><label>{{movie.rating}}</label>
+        </div>
+        <div class="mt-2">
+            <strong>Descripción: </strong><label>{{movie.description}}</label>
+        </div>
+        <div class="mt-2">
+            <strong>Fecha de estreno: </strong><label>{{movie.releasedDate}}</label>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 tex-center p-0">
+        <p class="label">Cargando pelicula...</p>
+        <div class="spinner"></div>
+        <div class="position">
+            <iframe width="560" height="315" [src]="getVideoIframe(movie.trailerLink)" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
         </div>
     </div>
 </div>

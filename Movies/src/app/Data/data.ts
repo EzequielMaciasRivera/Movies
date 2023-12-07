@@ -18,7 +18,7 @@ export const moviesData: Movie[] = [
         description: 'Teen Miles Morales becomes the Spider-Man of his universe, and must join with five spider powered individuals from other dimensions to stop a threat for all realities.',
         rating: 8.4,
         duration: '1h 57min',
-        genre: ' Action, Animation, Adventure',
+        genre: 'Action, Animation, Adventure',
         releasedDate: '2018-12-14T00:00:00Z',
         poster: '../../assets/posters/SpiderMan.png',
         trailerLink: 'https://www.youtube.com/watch?v=tg52up16eq0',
