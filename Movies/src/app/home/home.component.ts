@@ -1,6 +1,7 @@
 import { moviesData } from './../Data/data';
 import { Component, OnInit } from '@angular/core';
 import { Movie } from '../models/movies';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,9 @@ export class HomeComponent implements OnInit {
   choosedMovie: any;
   sortedByAlphabetic = false;
   sortedByRealisedDate = false;
-  constructor() { }
+  constructor(
+    private readonly router: Router
+  ) { }
 
   ngOnInit(): void {
     this.moviesToShow = moviesData;
@@ -35,6 +38,9 @@ export class HomeComponent implements OnInit {
     return this.moviesToShow;
   }
 
+  seeDetails(id: number) {
+    this.router.navigate([`/movieDetails/${id}`]);
+  }
 
 
 
