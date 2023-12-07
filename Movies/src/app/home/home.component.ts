@@ -1,7 +1,8 @@
-import { moviesData } from './../Data/data';
+
 import { Component, OnInit } from '@angular/core';
 import { Movie } from '../models/movies';
 import { Router } from '@angular/router';
+import { ServiceMovieService } from '../services/service-movie.service';
 
 @Component({
   selector: 'app-home',
@@ -14,13 +15,19 @@ export class HomeComponent implements OnInit {
   sortedByAlphabetic = false;
   sortedByRealisedDate = false;
   constructor(
-    private readonly router: Router
+    private readonly router: Router,
+    private serviceMovie: ServiceMovieService
   ) { }
 
   ngOnInit(): void {
-    this.moviesToShow = moviesData;
-  }
+    this.getMovies();
 
+  }
+  getMovies(): void {
+    this.serviceMovie.getMovies().subscribe(movies => {
+      this.moviesToShow = movies;
+    });
+  }
   sortByAlphabetic(movies: Movie[]): Movie[] {
     this.moviesToShow = movies.sort((a, b) =>
       this.sortedByAlphabetic ? b.title.localeCompare(a.title) : a.title.localeCompare(b.title));
@@ -38,7 +45,7 @@ export class HomeComponent implements OnInit {
     return this.moviesToShow;
   }
 
-  seeDetails(id: number) {
+  seeDetails(id: number | undefined) {
     this.router.navigate([`/movieDetails/${id}`]);
   }
 

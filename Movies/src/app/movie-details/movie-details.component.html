@@ -1,1 +1,21 @@
-<p>movie-details works!</p>
+<div *ngFor="let movie of moviesToShow" class="row container-movie">
+    <div class="col-12 col-md-6 tex-center p-0">
+        <div pButton type="button" label="Regresar" (click)="goBack()">Atras</div>
+        <div style="background-image: url({{movie.poster}});" class="card"></div>
+    </div>
+    <div class="col-12 col-md-6 mt-4">
+        <strong>Género:</strong>
+        <div class="d-inline">
+            <!-- <p-tag [value]="genre.name" severity="success"></p-tag> -->
+        </div>
+        <div class="mt-2">
+            <strong>Título:</strong><label>algo</label>
+        </div>
+        <div class="mt-2">
+            <strong>Eslogan:</strong><label>algo</label>
+        </div>
+        <div class="mt-2">
+            <strong>Votos:</strong><label>algo</label>
+        </div>
+    </div>
+</div>

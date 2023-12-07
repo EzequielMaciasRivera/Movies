@@ -1,5 +1,5 @@
 export class Movie {
-    id: number = 0;
+    id?: number = 0;
     title: string = '';
     description: string = '';
     rating: number = 0;
