@@ -5,7 +5,7 @@ export const moviesData: Movie[] = [
         title: 'Tenet',
         description: 'Armed with only one word, Tenet, and fighting for the survival of the entire world, a Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.',
         rating: 7.8,
-        duration: '2h 30 min',
+        duration: '2h 30min',
         genre: 'Action, Sci-Fi',
         releasedDate: '2020-09-03T00:00:00Z',
         poster: '../../assets/posters/Tenet.png',

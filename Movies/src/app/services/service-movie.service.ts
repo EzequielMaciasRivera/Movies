@@ -7,6 +7,7 @@ import { moviesData } from './../Data/data';
 })
 export class ServiceMovieService {
 
+  myFavoriteMovies: Movie[] = [];
   constructor() { }
 
   public getMovies(): Observable<Movie[]> {

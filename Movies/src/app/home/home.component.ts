@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   sortedByRealisedDate = false;
   state1 = false;
   state2 = false;
+  likedstate1 = false;
   constructor(
     private readonly router: Router,
     private serviceMovie: ServiceMovieService
@@ -49,17 +50,19 @@ export class HomeComponent implements OnInit {
     return this.moviesToShow;
   }
 
-  seeDetails(id: number | undefined) {
+  seeDetails(id: number | undefined): void {
     this.router.navigate([`/movieDetails/${id}`]);
   }
 
+  addToMyList(movieLiked: Movie): void {
 
+    this.serviceMovie.myFavoriteMovies.push(movieLiked);
+    localStorage.setItem('usuario', JSON.stringify(this.serviceMovie.myFavoriteMovies));
+    this.likedstate1 = !this.likedstate1;
+  }
 
-
-
-
-  whatchMovie(heroe: any): void {
-    this.choosedMovie = heroe;
-    console.log(this.choosedMovie);
+  removeToMyList(): void {
+    localStorage.removeItem('usuario');
+    this.likedstate1 = !this.likedstate1;
   }
 }
