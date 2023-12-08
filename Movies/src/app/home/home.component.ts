@@ -14,6 +14,8 @@ export class HomeComponent implements OnInit {
   choosedMovie: any;
   sortedByAlphabetic = false;
   sortedByRealisedDate = false;
+  state1 = false;
+  state2 = false;
   constructor(
     private readonly router: Router,
     private serviceMovie: ServiceMovieService
@@ -32,6 +34,7 @@ export class HomeComponent implements OnInit {
     this.moviesToShow = movies.sort((a, b) =>
       this.sortedByAlphabetic ? b.title.localeCompare(a.title) : a.title.localeCompare(b.title));
     this.sortedByAlphabetic = !this.sortedByAlphabetic;
+    this.state1 = !this.state1;
     return this.moviesToShow;
   }
   sortConvertStringDateToString(movies: Movie[]): Movie[] {
@@ -42,6 +45,7 @@ export class HomeComponent implements OnInit {
       releasedDate: new Date(obj.releasedDate).toISOString(),
     }));
     this.sortedByRealisedDate = !this.sortedByRealisedDate;
+    this.state2 = !this.state2;
     return this.moviesToShow;
   }
 

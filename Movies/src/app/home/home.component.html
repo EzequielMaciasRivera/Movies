@@ -1,7 +1,15 @@
-<h1>Movies home</h1>
-<button type="button" class="btn-outline-success" (click)="sortByAlphabetic(moviesToShow)">Sort A - Z</button>
-<button type="button" class="btn-outline-success" (click)="sortConvertStringDateToString(moviesToShow)">Sort by
-  realisedDate</button>
+<div class="row">
+  <h1>Disfruta de las pelis!!</h1>
+</div>
+<div class="row order">
+  <button [ngClass]="{'off':!state1,'on':state1}" type="button" class="btn btn-outline-primary"
+    (click)="sortByAlphabetic(moviesToShow)">Sort A -
+    Z</button>
+  <button [ngClass]="{'off':!state2,'on':state2}" type="button" class="btn btn-outline-primary"
+    (click)="sortConvertStringDateToString(moviesToShow)">Sort
+    by
+    realisedDate</button>
+</div>
 
 <div class="d-flex justifyClass flex-wrap">
   <div *ngFor="let movie of moviesToShow" class="mx-2 my-2">
